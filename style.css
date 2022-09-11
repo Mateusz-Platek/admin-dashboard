@@ -11,7 +11,7 @@
 body {
     display: grid;
     grid-template: 1fr 5fr / 1fr 5fr;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 ul {
@@ -19,18 +19,101 @@ ul {
 }
 
 .header {
-    background-color: white;
+    background-color: #ecfdf5;
     grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+}
+
+.top {
+    display: grid;
+    align-items: center;
+    gap: 32px;
+    padding: 8px 64px;
+    grid-template-columns: auto 1fr auto auto auto;
+}
+
+.top img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.top svg {
+    width: 30px;
+    height: 30px;
+}
+
+.top input {
+    text-decoration: none;
+    outline: none;
+    border: 0;
+    background-color: #a7f3d0;
+    height: 30px;
+    border-radius: 25px;
+    padding: 0px 16px;
+}
+
+.bottom {
+    display: grid;
+    align-items: center;
+    gap: 32px;
+    padding: 8px 64px;
+    grid-template-columns: auto 1fr repeat(3, auto);
+}
+
+.bottom img {
+    height: 80px;
+    border-radius: 50%;
+}
+
+.bottom div > p{
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.bottom div > h3 {
+    font-size: 26px;
+}
+
+.bottom button {
+    background-color: #059669;
+    border: 0;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #ecfdf5;
 }
 
 .sidebar {
-    background-color: brown;
-    color: white;
+    background-color: #059669;
+    color: #ecfdf5;
     grid-row: 1 / 3;
     display: grid;
     grid-template-rows: auto auto auto 10fr;
     row-gap: 70px;
     padding: 20px;
+}
+
+.sidebar > div {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar svg {
+    fill: white;
+    height: 28px;
+    width: 28px;
+    margin-right: 16px;
+}
+
+.sidebar div > svg {
+    height: 50px;
+    width: 50px;
+    margin-right: 8px;
 }
 
 .sidebar h1 {
@@ -45,8 +128,13 @@ ul {
     row-gap: 16px;
 }
 
+.sidebar li {
+    display: flex;
+    align-items: center;
+}
+
 .main-content {
-    background-color: gray;
+    background-color: #a7f3d0;
     padding: 32px 32px 56px;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
@@ -79,8 +167,8 @@ ul {
 }
 
 .projects > div {
-    background-color: white;
-    border-left: 12px solid orange;
+    background-color: #ecfdf5;
+    border-left: 12px solid #064e3b;
     border-radius: 12px;
     padding: 16px;
 }
@@ -90,7 +178,7 @@ ul {
 }
 
 .announcements > div, .trending > div {
-    background-color: white;
+    background-color: #ecfdf5;
     border-radius: 12px;
 }
 
@@ -100,7 +188,7 @@ ul {
 
 .announcements p {
     font-size: 14px;
-    color: gray;
+    color: #10b981;
 }
 
 .announcements ul {
@@ -114,7 +202,7 @@ ul {
 }
 
 .announcements ul > li + li {
-    border-top: 1px solid gray;
+    border-top: 1px solid #059669;
 }
 
 .trending ul {
@@ -127,4 +215,16 @@ ul {
 .trending ul > li {
     display: flex;
     align-items: center;
+}
+
+.trending h4 {
+    margin-bottom: 4px;
+}
+
+.trending img {
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 12px;
 }
